@@ -8,6 +8,10 @@ import { Component, Input } from '@angular/core';
 export class SvgImageComponent {
 
   @Input() pathData: string = '';
-  @Input() svgFill: string = ''
+  @Input() svgFill: string = '';
+  @Input() height: string = '';
+  @Input() width: string = '';
+  @Input() viewbox: string = '';
+  @Input() class: string = ''
 
 }

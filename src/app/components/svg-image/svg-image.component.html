@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path [attr.d]="pathData" [attr.fill]='svgFill' class="fill-232323"></path>
+<!-- <svg xmlns="http://www.w3.org/2000/svg" [attr.width]="width" [attr.height]="height" [attr.viewbox]="viewbox"
+    xmlns="http://www.w3.org/2000/svg">
+    <path [attr.d]="pathData" [attr.fill]='svgFill' [attr.class]="class" fill-rule="evenodd"></path>
+</svg> -->
+<svg xmlns="http://www.w3.org/2000/svg" [attr.width]="width" [attr.height]="height" [attr.viewBox]="viewbox">
+    <path [attr.d]="pathData" [attr.fill]="svgFill" fill-rule="evenodd" />
 </svg>

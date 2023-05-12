@@ -18,7 +18,8 @@ export class HomeComponent {
     this.auth0Service.loginWithRedirect();
   }
 
-  logout() {
-    this.auth0Service.logout();
+  async logout() {
+    await this.auth0Service.logout();
+    localStorage.removeItem('userId');
   }
 }
