@@ -17,7 +17,7 @@ export class AppComponent {
   ) {
     this.auth0Service.isAuthenticated$.subscribe((isAuth) => {
       if (isAuth) {
-        this.router.navigate(['/iproov-auth'])
+        // this.router.navigate(['/iproov-auth'])÷
       }
     });
   }

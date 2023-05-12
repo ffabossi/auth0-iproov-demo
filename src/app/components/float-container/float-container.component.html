@@ -1,0 +1,13 @@
+<div class="container">
+    <app-svg-image [pathData]="svgPathData" [svgFill]="'#40c67c'"></app-svg-image>
+    <div class="container-text">
+        <p class="message">{{titlemessage}}</p>
+        <p class="success">{{subTitleMessage}}</p>
+    </div>
+    <div *ngIf="!isAuthenticated$" class="login loggedin" (click)="loginWithRedirect()">
+        Login
+    </div>
+    <div *ngIf="isAuthenticated$" class="login loggedin" (click)="logout()">
+        Logout
+    </div>
+</div>

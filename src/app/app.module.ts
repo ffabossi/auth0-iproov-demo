@@ -10,9 +10,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { IproovComponent } from './components/iproov/iproov.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FloatContainerComponent } from './components/float-container/float-container.component';
+import { SvgImageComponent } from './components/svg-image/svg-image.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, IproovComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, IproovComponent, FloatContainerComponent, SvgImageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
