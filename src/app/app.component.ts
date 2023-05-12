@@ -13,12 +13,11 @@ export class AppComponent {
   title = 'auth0-poc';
   constructor(
     private auth0Service: AuthService,
-    private router: Router
   ) {
-    this.auth0Service.isAuthenticated$.subscribe((isAuth) => {
-      if (isAuth) {
-        // this.router.navigate(['/iproov-auth'])÷
-      }
-    });
+    // this.iproovService.enrolToken()
+    //   .subscribe((data) => console.log(data), error => console.log(error))
+    this.auth0Service.getUser().subscribe((user: any) => {
+      localStorage.setItem('userId', user?.sub)
+    })
   }
 }

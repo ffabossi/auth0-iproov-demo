@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +9,10 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class HomeComponent {
 
-  ngOnInit() { }
+  titleMessage: string = ''
+  subTitleMessage: string = ''
 
-  isAuthenticated$: any = false;
-  constructor(private auth0Service: AuthService) {
-    this.auth0Service.isAuthenticated$.subscribe((isAuth) => {
-      this.isAuthenticated$ = isAuth;
-      this.auth0Service.getUser().subscribe((user: any) => {
-        localStorage.setItem('userId', user?.sub)
-      })
-    });
-  }
+  constructor(private auth0Service: AuthService, private authService: AuthenticationService) { }
 
   loginWithRedirect() {
     this.auth0Service.loginWithRedirect();

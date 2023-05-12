@@ -8,49 +8,21 @@
     width: 100%;
 }
 
-.container {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background-color: #f0f0f05c;
-    position: relative;
-    text-align: center;
-    border-radius: .5rem;
-    padding: 25px;
-    margin: 10% 0;
-    height: 40%;
-    width: 30%;
+    align-items: center;
+}
 
-    .container-text {
-        width: 100%;
+button {
+    transition: all .4s;
 
-        .message {
-            color: #666;
-            font-weight: 600;
-            font-size: 19px;
-        }
-
-        .success {
-            color: #000;
-            font-weight: 700;
-            font-size: 23px;
-        }
+    &:hover {
+        transform: scale(1.05);
     }
 
-    .login {
-        padding: 10px 20px;
-        font-size: 1.3rem;
-        border-radius: .5rem;
-        cursor: pointer;
-        color: white;
-        font-weight: 600;
-        letter-spacing: .15rem;
-        box-shadow: 0px 1px 2px 2px #00000038;
+    &:active {
+        transform: scale(1);
     }
-
-    .loggedin {
-        background-color: #D50101;
-    }
-
 }
