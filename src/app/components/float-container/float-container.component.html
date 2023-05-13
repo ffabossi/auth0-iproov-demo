@@ -51,29 +51,48 @@
         }}
       </p>
 
-      <button
-        type="submit"
-        (click)="isAuthenticated == true ? logout() : loginWithRedirect()"
-        class="block rounded-lg w-auto bg-indigo-600 -2 px-5 py-3 text-sm font-medium text-white inline-flex items-center justify-center"
-      >
-        {{ isAuthenticated == true ? "Sign out Okta" : "Go to Okta" }}
-        <svg
-          class="w-4 h-4 ml-2"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+      <ng-container *ngIf="isAuthenticated == false">
+          <app-iproov ></app-iproov>
+      </ng-container>
+      <div class="container-buttons-mfa">
+        <button
+          type="submit"
+          (click)="isAuthenticated == true ? logout() : loginWithRedirect()"
+          class="mr-4 block rounded-lg w-auto bg-indigo-600 -2 px-5 py-3 text-sm font-medium text-white inline-flex items-center justify-center"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
-      </button>
-      <div *ngIf="isAuthenticated == true">
-        <app-iproov></app-iproov>
+          {{ isAuthenticated == true ? "Sign out Okta" : "Go to Okta" }}
+          <svg
+            *ngIf="isAuthenticated == false"
+            class="w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+
+          <svg
+            *ngIf="isAuthenticated == true"
+            class="w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+        </button>
       </div>
     </form>
   </div>

@@ -1,28 +1,34 @@
 :host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    position: absolute;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-    transition: all .4s;
+  transition: all 0.4s;
 
-    &:hover {
-        transform: scale(1.05);
-    }
+  &:hover {
+    transform: scale(1.05);
+  }
 
-    &:active {
-        transform: scale(1);
-    }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.container-buttons-mfa {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

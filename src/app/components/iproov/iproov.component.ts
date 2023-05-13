@@ -7,7 +7,7 @@ import '@iproov/web-sdk';
   styleUrls: ['./iproov.component.scss'],
 })
 export class IproovComponent {
-  token = 'd207ec9e102510fcf5c753aa187d864ab583b56407f9aa2aa93ba0a11801vu01';
+  token = '877f08257f20e0efae533056080d91bb4e4d35602c350e1373166e611801vu01';
 
 
   ngOnInit() {
@@ -23,8 +23,8 @@ export class IproovComponent {
 
       iProovMe.innerHTML = `
       <div slot="button">
-          <button  style="display: flex;
-          align-items: center; background-color:#5045e5ff; border: none; padding: 1rem; border-radius: .5rem; width: auto; cursor: pointer; color: white; font-weight: 600" type="button">
+          <button style="display: flex;
+          align-items: center; background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; width: auto; cursor: pointer; color: white; font-weight: 600; font-size:0.875rem">
               Go to IProov
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
