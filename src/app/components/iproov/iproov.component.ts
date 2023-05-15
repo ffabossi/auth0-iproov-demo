@@ -9,11 +9,9 @@ import '@iproov/web-sdk';
 })
 export class IproovComponent {
 
-  token = '67efa42e332bd8d8cabf06f6d983d2c630543ac133910647a20e23d21801vu01';
+  token = '70515442a5a3c133ea74b31b19d847b0ef4e1911e50060153e76451a1801vu01';
   isAuth: boolean;
-  constructor(private auth0Service: AuthService) {
-
-  }
+  constructor(private auth0Service: AuthService) { }
 
   ngOnInit() {
     this.auth0Service.isAuthenticated$.subscribe((isAuth) => {
@@ -35,10 +33,10 @@ export class IproovComponent {
     iProovMe.innerHTML = `
       <div slot="ready"></div>
       <div slot="button">
-      <button style="display: flex; 
+      <button id="iproov-button" style="display: flex; 
       align-items: center; background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; 
       cursor: ${isAuth == true ? 'pointer' : 'not-allowed'}; color: white; font-weight: 600; font-size:0.875rem"}>
-      ${isAuth == true ? 'Go to IProov' : 'MFA not available'}
+      ${isAuth == true ? 'Sign in to IProov' : 'MFA not available'}
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg">
         ${isAuth == true ?
@@ -53,5 +51,24 @@ export class IproovComponent {
     document
       .getElementById('iproov-container')
       ?.insertAdjacentElement('beforebegin', iProovMe);
+
+    const iproovButton: any = document.getElementById('iproov-button');
+
+    if (!this.isAuth) {
+      iproovButton.style.display = 'none'
+    } else {
+      iproovButton.style.display = 'visible'
+
+    }
+
+    iproovButton.addEventListener('mouseover', () => {
+      iproovButton.style.transform = 'scale(1.05)';
+      iproovButton.style.transition = 'all 0.4s';
+    });
+
+    iproovButton.addEventListener('mouseout', () => {
+      iproovButton.style.transform = 'scale(1)';
+      iproovButton.style.transition = 'all 0.4s';
+    });
   }
 }

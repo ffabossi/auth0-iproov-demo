@@ -9,10 +9,6 @@ export class IproovService {
 
   constructor(private httpClient: HttpClient, private auth0Service: AuthService) { }
 
-  ngOnInit() {
-
-  }
-
   body = {
     "api_key": "24e048b8558cdc78c6f7bd6dadd278348459e3da",
     "secret": "a0a156c3d33e0f60b528b3227f9ed3644150229d",

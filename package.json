@@ -20,6 +20,7 @@
     "@angular/router": "^15.2.0",
     "@auth0/auth0-angular": "^1.5.1",
     "@iproov/web-sdk": "^4.2.0",
+    "@uiball/loaders": "^1.2.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
