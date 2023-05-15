@@ -19,7 +19,7 @@ export class HomeComponent {
   }
 
   async logout() {
-    await this.auth0Service.logout();
+    await this.auth0Service.logout({ returnTo: 'https://787e-2804-431-cff2-f2b3-4bf-28f3-e06a-a2c6.ngrok-free.app' });
     localStorage.removeItem('userId');
   }
 }

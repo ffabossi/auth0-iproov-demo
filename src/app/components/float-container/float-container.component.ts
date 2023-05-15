@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output, } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
@@ -13,12 +14,12 @@ export class FloatContainerComponent {
   @Input() svgImage: string = ''
   @Output() loginClicked = new EventEmitter<void>();
   @Output() logoutClicked = new EventEmitter<void>();
-  isAuthenticated: any;
+  isAuthenticated: boolean;
 
   svgPathData = 'M120.127 135.861l-16.85-51.864 44.107-32.045H92.863L76.011.09l-.005-.014h54.53l16.855 51.871v-.001l.014-.008c9.79 30.092-.292 64.318-27.278 83.923zm-88.234 0l-.014.01 44.119 32.053 44.129-32.062-44.115-32.054-44.119 32.053zM4.624 51.939c-10.304 31.721 1.657 65.333 27.26 83.928l.004-.016L48.74 83.99 4.642 51.951H59.15L76.003.089l.004-.014H21.474L4.624 51.939z'
 
 
-  constructor(private auth0Service: AuthService) { }
+  constructor(private auth0Service: AuthService, private router: Router) { }
 
   async ngOnInit() {
     await this.auth0Service.isAuthenticated$.subscribe((isAuthenticated) => {
