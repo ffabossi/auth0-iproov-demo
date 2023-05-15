@@ -20,17 +20,7 @@ export class IproovComponent {
     });
   }
 
-  addCDNImport(url: string) {
-    const script = document.createElement('script');
-    script.src = url;
-    script.async = true;
-    document.head.appendChild(script);
-  }
-
-  // Adicione esta chamada dentro da função createIproovCompoment
-
   createIproovComponent(isAuth: boolean) {
-    // this.addCDNImport('https://cdn.tailwindcss.com');
 
     const iProovMe = document.createElement('iproov-me');
 
