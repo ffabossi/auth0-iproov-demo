@@ -9,7 +9,7 @@ import '@iproov/web-sdk';
 })
 export class IproovComponent {
 
-  token = '782cf31956a8817624edd87b885ecc13ba2f9fec0debee77a1923cea1801vu01';
+  token = '32711cbd99594ac07d279689918d7b85c11b2aef138e2ea4c863041f1801vu01';
   isAuth: boolean;
   constructor(private auth0Service: AuthService) { }
 
@@ -88,7 +88,7 @@ export class IproovComponent {
             -72 77 -52 97 22 22 29 20 72 -19 l38 -34 59 59 c63 64 87 73 105 40z"/>
         </g>
       </svg>
-      You have been authenticated successfully
+      You has been authenticated successfully
       </div>
       <div slot="failed" id="failed">
         <svg style="position: relative; right: 0.5rem; transform: scale(1.2)" version="1.0" xmlns="http://www.w3.org/2000/svg"
