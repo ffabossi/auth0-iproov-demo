@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import '@iproov/web-sdk';
+import { IproovService } from 'src/app/services/iproov.service';
 
 @Component({
   selector: 'app-iproov',
@@ -9,14 +10,21 @@ import '@iproov/web-sdk';
 })
 export class IproovComponent {
 
-  token = '32711cbd99594ac07d279689918d7b85c11b2aef138e2ea4c863041f1801vu01';
+  token = '29de92e984b69edc20d4da995b1fd045a5bb3937aa439407aaa4ab7e1801vu01';
   isAuth: boolean;
-  constructor(private auth0Service: AuthService) { }
+  userId: any = '';
+  constructor(private auth0Service: AuthService, private iproovService: IproovService) { }
 
   ngOnInit() {
     this.auth0Service.isAuthenticated$.subscribe((isAuth) => {
       this.isAuth = isAuth;
-      this.createIproovComponent(isAuth);
+      if (this.isAuth) {
+        this.userId = localStorage.getItem('userId');
+        this.iproovService.enrolToken(this.userId);
+        this.createIproovComponent(isAuth);
+      } else {
+        console.log('nao ta logado')
+      }
     });
   }
 

@@ -8,10 +8,8 @@ import { AuthService } from '@auth0/auth0-angular';
 export class IproovService {
 
   constructor(private httpClient: HttpClient, private auth0Service: AuthService) { }
-  userId: any = '';
 
   ngOnInit() {
-    this.userId = localStorage.getItem('userId');
   }
 
   body = {
@@ -19,14 +17,16 @@ export class IproovService {
     "secret": "a0a156c3d33e0f60b528b3227f9ed3644150229d",
     "resource": "onboarding",
     "assurance_type": "genuine_presence",
-    "user_id": !!this.userId ? this.userId : ""
+    "user_id": ''
   };
 
   service() {
     return this.httpClient.post('http://localhost:3000', this.body);
   }
 
-  enrolToken() {
-    return this.httpClient.post('https://7351-2804-431-cff2-f2b3-60be-8531-2ee2-2f6a.ngrok-free.app/enrol-token', this.body);
+  enrolToken(userId: string) {
+    this.body.user_id = userId
+    console.log(this.body);
+    return this.httpClient.post('https://node-iproov.herokuapp.com/enrol-token', this.body);
   }
 }
