@@ -9,7 +9,7 @@ import '@iproov/web-sdk';
 })
 export class IproovComponent {
 
-  token = '0b654a5db01ac61af872dfde311f9c9fbafd1d417fabba3a3fe965ed1801vu01';
+  token = '782cf31956a8817624edd87b885ecc13ba2f9fec0debee77a1923cea1801vu01';
   isAuth: boolean;
   constructor(private auth0Service: AuthService) { }
 
@@ -59,82 +59,75 @@ export class IproovComponent {
     </div>`
 
     iProovMe.innerHTML = `
-      <div slot="ready"></div>
-      <div slot="button">
-        <button id="iproov-button" class="iproov-button" style="display: flex; align-items: center; background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; cursor: ${isAuth ? 'pointer' : 'not-allowed'}; color: white; font-weight: 600; font-size:0.875rem">
-          ${buttonLabel}
-          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            ${buttonIcon}
-          </svg>
-        </button>
-      </div>
-      <div slot="error" id="error-message">${errorMessage}</div>
-      <div slot="progress">${loaderProgress}</div>
-      <div slot="passed" id="passed">
+    <div slot="ready"></div>
+    <div slot="button">
+      <button id="iproov-button" class="iproov-button" style="display: flex; align-items: center; background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; cursor: ${isAuth ? 'pointer' : 'not-allowed'}; color: white; font-weight: 600; font-size:0.875rem">
+        ${buttonLabel}
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          ${buttonIcon}
+        </svg>
+      </button>
+    </div>
+    <div slot="error" id="error-message">${errorMessage}</div>
+    <div slot="progress">${loaderProgress}</div>
+    <div slot="passed" id="passed">
       <svg style="position: relative; right: 0.5rem" version="1.0" xmlns="http://www.w3.org/2000/svg"
-      width="24.000000pt" height="24.000000pt" viewBox="0 0 64.000000 64.000000"
-      preserveAspectRatio="xMidYMid meet">
-      <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-      fill="#2469efff" stroke="none">
-      <path d="M290 603 c-14 -10 -47 -20 -75 -23 -41 -4 -52 -9 -62 -31 -14 -29
-      -33 -47 -67 -64 -16 -8 -22 -23 -26 -60 -3 -28 -14 -62 -24 -77 -18 -27 -18
-      -29 0 -55 10 -16 21 -50 24 -78 4 -37 10 -52 26 -60 34 -17 53 -35 67 -64 10
-      -22 21 -27 62 -31 28 -3 62 -14 78 -24 26 -18 28 -18 55 0 15 10 49 21 77 24
-      37 4 52 10 60 26 17 34 35 53 64 67 22 10 27 21 31 62 3 28 14 62 24 78 18 26
-      18 28 0 55 -10 15 -21 49 -24 77 -4 41 -9 52 -31 62 -29 14 -47 33 -64 67 -8
-      16 -22 22 -60 26 -28 3 -61 13 -75 23 -13 9 -27 17 -30 17 -3 0 -17 -8 -30
-      -17z m170 -203 c10 -18 2 -30 -62 -96 -102 -106 -100 -106 -160 -47 -64 62
-      -72 77 -52 97 22 22 29 20 72 -19 l38 -34 59 59 c63 64 87 73 105 40z"/>
-      </g>
+        width="24.000000pt" height="24.000000pt" viewBox="0 0 64.000000 64.000000"
+        preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+          fill="#2469efff" stroke="none">
+          <path d="M290 603 c-14 -10 -47 -20 -75 -23 -41 -4 -52 -9 -62 -31 -14 -29
+            -33 -47 -67 -64 -16 -8 -22 -23 -26 -60 -3 -28 -14 -62 -24 -77 -18 -27 -18
+            -29 0 -55 10 -16 21 -50 24 -78 4 -37 10 -52 26 -60 34 -17 53 -35 67 -64 10
+            -22 21 -27 62 -31 28 -3 62 -14 78 -24 26 -18 28 -18 55 0 15 10 49 21 77 24
+            37 4 52 10 60
+            26 17 34 35 53 64 67 22 10 27 21 31 62 3 28 14 62 24 78 18 26
+            18 28 0 55 -10 15 -21 49 -24 77 -4 41 -9 52 -31 62 -29 14 -47 33 -64 67 -8
+            16 -22 22 -60 26 -28 3 -61 13 -75 23 -13 9 -27 17 -30 17 -3 0 -17 -8 -30
+            -17z m170 -203 c10 -18 2 -30 -62 -96 -102 -106 -100 -106 -160 -47 -64 62
+            -72 77 -52 97 22 22 29 20 72 -19 l38 -34 59 59 c63 64 87 73 105 40z"/>
+        </g>
       </svg>
-      You has been authenticated successfully
+      You have been authenticated successfully
       </div>
       <div slot="failed" id="failed">
-      <svg style="position: relative; right: 0.5rem; transform: scale(1.2)" version="1.0" xmlns="http://www.w3.org/2000/svg"
-        width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
-        preserveAspectRatio="xMidYMid meet">
-
-        <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
-        fill="#f34236ff" stroke="none">
-        <path d="M80 197 c-52 -27 -62 -104 -19 -143 30 -27 93 -25 121 4 30 29 31 94
-        3 122 -26 26 -74 34 -105 17z m28 -49 c8 -8 15 -8 27 2 20 17 32 5 15 -15 -10
-        -12 -10 -18 0 -30 17 -20 5 -32 -15 -15 -12 10 -18 10 -30 0 -20 -17 -32 -5
-        -15 15 10 12 10 19 2 27 -14 14 -16 28 -4 28 4 0 13 -5 20 -12z"/>
-        </g>
+        <svg style="position: relative; right: 0.5rem; transform: scale(1.2)" version="1.0" xmlns="http://www.w3.org/2000/svg"
+          width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+          preserveAspectRatio="xMidYMid meet">
+          <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+            fill="#f34236ff" stroke="none">
+            <path d="M80 197 c-52 -27 -62 -104 -19 -143 30 -27 93 -25 121 4 30 29 31 94
+              3 122 -26 26 -74 34 -105 17z m28 -49 c8 -8 15 -8 27 2 20 17 32 5 15 -15 -10
+              -12 -10 -18 0 -30 17 -20 5 -32 -15 -15 -12 10 -18 10 -30 0 -20 -17 -32 -5
+              -15 15 10 12 10 19 2 27 -14 14 -16 28 -4 28 4 0 13 -5 20 -12z"/>
+          </g>
         </svg>
-         User not authenticated, try again.
+        User not authenticated, try again.
       </div>
-
       <div slot="grant_permission" id="grant-permission">
-      
+    
       </div>
-
       <div slot="grant_button" id="grant-permission-button">
+        Device permissions must be granted to use iProov.
+        <button id="iproov-grant-button-permission" class="iproov-button"
+          style="border: none; padding: 0.75rem; border-radius: .5rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); cursor: pointer; color: white; font-weight: 600; font-size:0.875rem">
+          <svg style="position: relative; right: 0.5rem; transform: scale(0.8);" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+            preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+              fill="#fff" stroke="none">
+              <path d="M82 208 c-7 -7 -12 -20 -12 -30 0 -10 -7 -21 -15 -24 -11 -5 -15 -22
+                -15 -69 0 -69 6 -75 80 -75 74 0 80 6 80 75 0 71 -4 75 -75 75 -39 0 -43 2
+                -38 21 7 26 30 35 54 21 26 -16 34 -15 19 3 -15 18 -61 20 -78 3z m103 - 123
+                l0 -50 -65 0 -65 0 -3 39 c-5 63 0 67 70 64 l63 -3 0 -50z"/>
+                    </g>
+                  </svg>
+                  Grant Permission
+                </button>
+              </div>
+            </div>
+          `;
 
-      Device permissions must be granted to use iProov.
-
-      <button id="iproov-grant-button-permission" class="iproov-button"
-      border: none; padding: 0.75rem; border-radius: .5rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); cursor: pointer; color: white; font-weight: 600; font-size:0.875rem">
-        
-      <svg style="position: relative; right: 0.5rem; transform: scale(0.8);" version="1.0" xmlns="http://www.w3.org/2000/svg"
-      width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
-      preserveAspectRatio="xMidYMid meet">
-     
-     <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
-     fill="#fff" stroke="none">
-     <path d="M82 208 c-7 -7 -12 -20 -12 -30 0 -10 -7 -21 -15 -24 -11 -5 -15 -22
-     -15 -69 0 -69 6 -75 80 -75 74 0 80 6 80 75 0 71 -4 75 -75 75 -39 0 -43 2
-     -38 21 7 26 30 35 54 21 26 -16 34 -15 19 3 -15 18 -61 20 -78 3z m103 -123
-     l0 -50 -65 0 -65 0 -3 39 c-5 63 0 67 70 64 l63 -3 0 -50z"/>
-     <path d="M110 75 c0 -14 5 -25 10 -25 6 0 10 11 10 25 0 14 -4 25 -10 25 -5 0
-     -10 -11 -10 -25z"/>
-     </g>
-     </svg>
-      Grant Permission
-    </button>
-      </div>
-
-    `;
 
     const iproovContainer = document.getElementById('iproov-container');
     iproovContainer?.insertAdjacentElement('beforebegin', iProovMe);
@@ -164,7 +157,6 @@ export class IproovComponent {
   padding: 1.5rem;
   border-radius: 1rem;
 `;
-
 
     const iproovError: any = document.getElementById('error-message');
     iproovError.style.cssText += `
