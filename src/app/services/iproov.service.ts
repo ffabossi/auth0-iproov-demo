@@ -24,7 +24,7 @@ export class IproovService {
     return this.httpClient.post('http://localhost:3000', this.body);
   }
 
-  enrolToken(userId: string) {
+  enrolToken(userId?: any) {
     this.body.user_id = userId
     console.log(this.body);
     return this.httpClient.post('https://node-iproov.herokuapp.com/enrol-token', this.body);

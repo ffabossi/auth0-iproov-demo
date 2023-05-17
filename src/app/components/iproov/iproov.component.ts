@@ -10,7 +10,7 @@ import { IproovService } from 'src/app/services/iproov.service';
 })
 export class IproovComponent {
 
-  token = '29de92e984b69edc20d4da995b1fd045a5bb3937aa439407aaa4ab7e1801vu01';
+  token = '';
   isAuth: boolean;
   userId: any = '';
   constructor(private auth0Service: AuthService, private iproovService: IproovService) { }
@@ -20,10 +20,12 @@ export class IproovComponent {
       this.isAuth = isAuth;
       if (this.isAuth) {
         this.userId = localStorage.getItem('userId');
-        this.iproovService.enrolToken(this.userId);
-        this.createIproovComponent(isAuth);
+        this.iproovService.enrolToken().subscribe((data: any) => {
+          this.token = data.token;
+          this.createIproovComponent(isAuth);
+        });
       } else {
-        console.log('nao ta logado')
+        new Error('User not authenticated, try again or contact the administrator');
       }
     });
   }
@@ -134,6 +136,20 @@ export class IproovComponent {
                 </button>
               </div>
             </div>
+
+            <div slot="no_camera" id="no-camera">
+            <svg style="position: relative; right: 0.5rem; transform: scale(1.2)" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+            preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+              fill="#f34236ff" stroke="none">
+              <path d="M80 197 c-52 -27 -62 -104 -19 -143 30 -27 93 -25 121 4 30 29 31 94
+                3 122 -26 26 -74 34 -105 17z m28 -49 c8 -8 15 -8 27 2 20 17 32 5 15 -15 -10
+                -12 -10 -18 0 -30 17 -20 5 -32 -15 -15 -12 10 -18 10 -30 0 -20 -17 -32 -5
+                -15 15 10 12 10 19 2 27 -14 14 -16 28 -4 28 4 0 13 -5 20 -12z"/>
+            </g>
+          </svg>
+            Camera not found, try again</div>
           `;
 
 
@@ -160,6 +176,16 @@ export class IproovComponent {
   color: #9ca3afff;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+`;
+
+    const iproovNoCamera: any = document.getElementById('no-camera');
+    iproovNoCamera.style.cssText += `
+  color: #9ca3afff;
+  display: flex;
   align-items: center;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   padding: 1.5rem;
@@ -195,7 +221,6 @@ export class IproovComponent {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     padding: 1.5rem
   `;
-
 
     const iproovButton: any = document.getElementById('iproov-button');
 
