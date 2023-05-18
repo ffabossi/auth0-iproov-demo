@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IproovComponent } from './iproov.component';
+import { IproovAuthComponent } from './iproov-auth.component';
 
-describe('IproovComponent', () => {
-  let component: IproovComponent;
-  let fixture: ComponentFixture<IproovComponent>;
+describe('IproovAuthComponent', () => {
+  let component: IproovAuthComponent;
+  let fixture: ComponentFixture<IproovAuthComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IproovComponent ]
+      declarations: [ IproovAuthComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IproovComponent);
+    fixture = TestBed.createComponent(IproovAuthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

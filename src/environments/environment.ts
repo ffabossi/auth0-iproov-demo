@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   auth: {
-    domain: 'dev-6g6o3em3hlydzt3e.us.auth0.com',
-    clientId: 'piPEJNbL3mP712iuc8m3fcOWlaF9YNFz',
+    domain: 'honda-poc.cic-demo-platform.auth0app.com',
+    clientId: '1Jtzk2uAzcfTmJWSoT9Ag1uHZb9sg9rl',
   }
 };
 

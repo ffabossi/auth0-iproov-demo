@@ -1,34 +1,20 @@
 import { Component } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
-import '@iproov/web-sdk';
-import { IproovService } from 'src/app/services/iproov.service';
 
 @Component({
-  selector: 'app-iproov',
-  templateUrl: './iproov.component.html',
-  styleUrls: ['./iproov.component.scss'],
+  selector: 'app-iproov-auth',
+  templateUrl: './iproov-auth.component.html',
+  styleUrls: ['./iproov-auth.component.scss']
 })
-export class IproovComponent {
+export class IproovAuthComponent {
 
-  token = '29de92e984b69edc20d4da995b1fd045a5bb3937aa439407aaa4ab7e1801vu01';
-  isAuth: boolean;
-  userId: any = '';
-  constructor(private auth0Service: AuthService, private iproovService: IproovService) { }
+  token = 'f51af23b1a6add7612a5c5624ca69863f5fe411536c7eb7787bbba251801vu01';
 
   ngOnInit() {
-    this.auth0Service.isAuthenticated$.subscribe((isAuth) => {
-      this.isAuth = isAuth;
-      if (this.isAuth) {
-        this.userId = localStorage.getItem('userId');
-        this.iproovService.enrolToken(this.userId);
-        this.createIproovComponent(isAuth);
-      } else {
-        console.log('nao ta logado')
-      }
-    });
+    this.createIproovComponent();
   }
 
-  createIproovComponent(isAuth: boolean) {
+
+  createIproovComponent() {
 
     const iProovMe = document.createElement('iproov-me');
 
@@ -39,15 +25,11 @@ export class IproovComponent {
     iProovMe.setAttribute('token', this.token);
     iProovMe.setAttribute('base_url', 'https://us.rp.secure.iproov.me/');
 
-    const buttonLabel = isAuth ? 'Sign in to IProov' : 'MFA not available';
-    const buttonIcon = isAuth ? `
+    const buttonLabel = 'Sign in to IProov';
+    const buttonIcon = `
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M14 5l7 7m0 0l-7 7m7-7H3" />
-    ` :
-      `
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M6 18L18 6M6 6l12 12" />
-    `;
+    `
 
     const errorMessage = `
       <svg style="margin-right: .5rem;" aria-hidden="true" class="w-6 h-6 text-red-500 dark:text-red-600"
@@ -69,7 +51,8 @@ export class IproovComponent {
     iProovMe.innerHTML = `
     <div slot="ready"></div>
     <div slot="button">
-      <button id="iproov-button" class="iproov-button" style="display: flex; align-items: center; background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; cursor: ${isAuth ? 'pointer' : 'not-allowed'}; color: white; font-weight: 600; font-size:0.875rem">
+      <button id="iproov-button" class="iproov-button" style="display: flex; align-items: center; 
+      background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; cursor: 'pointer'; color: white; font-weight: 600; font-size:0.875rem">
         ${buttonLabel}
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           ${buttonIcon}
@@ -196,16 +179,7 @@ export class IproovComponent {
     padding: 1.5rem
   `;
 
-
     const iproovButton: any = document.getElementById('iproov-button');
-
-    if (!this.isAuth) {
-      iproovButton.style.display = 'none';
-      iproovError.style.display = 'none'
-    } else {
-      iproovButton.style.display = 'visible';
-      iproovError.style.display = 'visible'
-    }
 
     iproovButton.addEventListener('mouseover', () => {
       iproovButton.style.transform = 'scale(1.05)';

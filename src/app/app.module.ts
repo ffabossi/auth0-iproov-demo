@@ -6,14 +6,13 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { environment } from 'src/environments/environment.prod';
-import { IproovComponent } from './components/iproov/iproov.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FloatContainerComponent } from './components/float-container/float-container.component';
 import { SvgImageComponent } from './components/svg-image/svg-image.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, IproovComponent, FloatContainerComponent, SvgImageComponent],
+  declarations: [AppComponent, HomeComponent, FloatContainerComponent, SvgImageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

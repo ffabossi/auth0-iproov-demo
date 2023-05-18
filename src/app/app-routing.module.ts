@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IproovComponent } from './components/iproov/iproov.component';
 import { HomeComponent } from './components/home/home.component';
+import { IproovAuthComponent } from './components/iproov-auth/iproov-auth.component';
 
 const routes: Routes = [
   {
-    path: 'iproov-auth',
-    component: IproovComponent,
+    path: 'iproov-authentication',
+    component: IproovAuthComponent
   },
   {
     path: '',
