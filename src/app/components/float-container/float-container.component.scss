@@ -14,21 +14,3 @@
   justify-content: center;
   align-items: center;
 }
-
-button {
-  transition: all 0.4s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  &:active {
-    transform: scale(1);
-  }
-}
-
-.container-buttons-mfa {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}

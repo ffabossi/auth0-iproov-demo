@@ -5,7 +5,8 @@
     </h1>
 
     <p class="mx-auto mt-4 max-w-md text-center text-gray-500 mb">
-      Now, we need to know if it's really you :)
+      Welcome <span class="text-gray-800">{{ username }}</span
+      >, we need to know if it's really you :)
     </p>
 
     <div
@@ -26,6 +27,27 @@
         effortless user authentication solutions for businesses.
       </p>
       <div id="iproov-container"></div>
+      <button
+        type="submit"
+        (click)="logout()"
+        class="block rounded-lg w-auto bg-indigo-600 -2 px-5 py-3 text-sm font-medium text-white inline-flex items-center justify-center"
+      >
+        Sign out Okta
+        <svg
+          class="w-4 h-4 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>

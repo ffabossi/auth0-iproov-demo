@@ -20,13 +20,8 @@ export class IproovService {
     "user_id": ''
   };
 
-  service() {
-    return this.httpClient.post('http://localhost:3000', this.body);
-  }
-
   enrolToken(userId: string) {
     this.body.user_id = userId
-    console.log(this.body);
     return this.httpClient.post('https://node-iproov.herokuapp.com/enrol-token', this.body);
   }
 }

@@ -9,10 +9,10 @@ import { environment } from 'src/environments/environment.prod';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FloatContainerComponent } from './components/float-container/float-container.component';
-import { SvgImageComponent } from './components/svg-image/svg-image.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FloatContainerComponent, SvgImageComponent],
+  declarations: [AppComponent, HomeComponent, FloatContainerComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
