@@ -1,10 +1,10 @@
-<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-  <div class="flex-column items-center justify-items-center mx-auto max-w-lg">
-    <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-      Step 1 - Login with Okta
+<div class="container mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="flex-column items-center justify-items-center mx-auto max-w-3xl">
+    <h1 class="text-center text-2xl font-bold text-[#22333b] sm:text-3xl">
+      STEP 1 - Sign/in with Okta
     </h1>
 
-    <p class="mx-auto mt-4 max-w-md text-center text-gray-500 mb">
+    <p class="mx-auto mt-4 max-w-md text-center text-[#e5383b] mb">
       You will be authenticated with Okta Customer Identity and IProov as the
       second factor.
     </p>
@@ -52,37 +52,6 @@
         Okta Customer Identity Cloud is an authentication platform that provides
         security features, such as login and social login.
       </p>
-      <button
-        type="submit"
-        (click)="loginWithRedirect()"
-        class="block rounded-lg w-auto bg-indigo-600 -2 px-5 py-3 text-sm font-medium text-white inline-flex items-center justify-center"
-      >
-        {{ isAuthenticated ? "Sign out Okta" : "Sign in to Okta" }}
-        <svg
-          class="w-4 h-4 ml-2"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <ng-container *ngIf="!isAuthenticated">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </ng-container>
-          <ng-container *ngIf="isAuthenticated">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </ng-container>
-        </svg>
-      </button>
     </div>
   </div>
 </div>

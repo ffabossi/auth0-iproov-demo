@@ -1,0 +1,73 @@
+<div class="header-2">
+  <nav class="header py-2 md:py-4">
+    <div class="container px-4 mx-auto md:flex md:items-center">
+      <div class="flex justify-between items-center">
+        <a [routerLink]="'/'" class="font-bold text-xl text-indigo-600">
+          <img
+            src="https://www.honda.com.br/sites/cbw/themes/custom/honda/img/hondalogo.svg"
+            height="160"
+            width="160"
+            alt=""
+          />
+        </a>
+        <button
+          class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden"
+          id="navbar-toggle"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div
+        class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"
+        id="navbar-collapse"
+      >
+        <a
+          class="p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
+          >Home</a
+        >
+        <a
+          *ngIf="isAuth"
+          routerLink="profile"
+          class="p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
+          >My Profile</a
+        >
+        <a
+          (click)="isAuth ? logout() : login()"
+          class="flex flex-row items-center p-2 lg:px-4 md:mx-2 text-[#192a51] text-center border border-solid border-[#dee2e6] rounded hover:bg-[#2b2d42] hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1"
+          >{{ isAuth ? "Sign out" : "Sign in" }}
+          <svg
+            class="w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ng-container *ngIf="!isAuth">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </ng-container>
+            <ng-container *ngIf="isAuth">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </ng-container>
+          </svg>
+        </a>
+
+        <a
+          href="#"
+          class="p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
+          >Sign up</a
+        >
+      </div>
+    </div>
+  </nav>
+</div>
