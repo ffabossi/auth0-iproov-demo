@@ -60,7 +60,7 @@ export class IproovAuthComponent {
     <div slot="ready"></div>
     <div slot="button">
       <button id="iproov-button" class="iproov-button" style="display: flex; align-items: center; 
-      background-color:#5045e5ff; border: none; padding: 0.75rem; border-radius: .5rem; cursor: 'pointer'; color: white; font-weight: 600; font-size:0.875rem">
+      background-color:#2b2d42; border: none; padding: 0.75rem; border-radius: .5rem; cursor: 'pointer'; color: white; font-weight: 600; font-size:0.875rem">
         ${buttonLabel}
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           ${buttonIcon}
