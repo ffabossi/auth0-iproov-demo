@@ -9,10 +9,12 @@ import { environment } from 'src/environments/environment.prod';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FloatContainerComponent } from './components/float-container/float-container.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FloatContainerComponent],
+  declarations: [AppComponent, HomeComponent, FloatContainerComponent, ProfileComponent, HeaderComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
