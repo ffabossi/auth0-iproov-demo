@@ -9,12 +9,18 @@ import { AuthService } from '@auth0/auth0-angular';
 export class HeaderComponent {
   isAuth: boolean;
 
+  userName: string | undefined;
+
   constructor(private authService: AuthService) { }
 
 
   ngOnInit() {
     this.authService.isAuthenticated$.subscribe((isAuth) => {
       this.isAuth = isAuth
+    })
+
+    this.authService.user$.subscribe((user) => {
+      this.userName = user?.nickname;
     })
   }
 

@@ -10,13 +10,12 @@ import { AuthService } from '@auth0/auth0-angular';
 export class IproovAuthComponent {
 
 
-  token = '027a7057c52845d47579041aae1c4335ceaab65e1a0f9e450dfda06a1801vu01';
+  token = '717efa59c8bffce718d21b9b61de1c2cabe1ec1b28373d6dbcc09a451801vu01';
   username: any;
   constructor(private auth0Service: AuthService, private router: Router) { }
 
 
   ngOnInit() {
-    // this.auth0Service.getUser().subscribe((data) => { console.log(data) })
     this.auth0Service.user$.subscribe(user => this.username = user?.nickname)
     this.createIproovComponent();
   }
